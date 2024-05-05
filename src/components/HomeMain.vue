@@ -110,6 +110,7 @@ export default {
     },
     onWebSocketOpen() {
       console.log("链接成功");
+      console.log(echarts.version);
     },
     onWebSocketMessage(event) {
       const message = event.data;
@@ -147,7 +148,7 @@ export default {
       this.showTable = false;
       this.isLoading = true;
       const intervalId = setInterval(() => {
-        this.startTime = parseFloat(this.startTime) + 1 / 30000;
+        this.startTime = parseFloat(this.startTime) + 1 / 300;
         if (this.variable >= 100) {
           clearInterval(intervalId);
         }
